@@ -38,6 +38,13 @@ class SignUp extends StatelessWidget {
                 prefixIcon: (Icons.password),
                 controller: passwordTextEditingController,
                 isPassword: true),
+            GestureDetector(
+                child: Text(
+                  'Already have an Account? Login',
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                }),
             ElevatedButton(
                 onPressed: () => Navigator.push(
                     context,

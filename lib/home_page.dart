@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key, required this.name, required this.email});
   final String name;
@@ -9,15 +8,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Text(
             "Welcome $name ",
-            style: const TextStyle(
-                fontSize: 25,
-                backgroundColor: Colors.black,
-                color: Colors.white),
+            style: const TextStyle(fontSize: 25, color: Colors.white),
           ),
         ),
-        body: Container(
+        body: Center(
           child: Text("Your mail id is $email  "),
         ));
   }
