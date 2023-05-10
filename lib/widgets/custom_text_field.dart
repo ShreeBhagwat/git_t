@@ -15,20 +15,23 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      obscureText: isPassword,
-      decoration: InputDecoration(
-        prefixIcon: Icon(
-          prefixIcon,
-        ),
-        hintText: hintText,
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.grey,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextFormField(
+        controller: controller,
+        obscureText: isPassword,
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            prefixIcon,
           ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
+          hintText: hintText,
+          border: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
         ),
       ),
