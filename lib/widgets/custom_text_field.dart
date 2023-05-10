@@ -16,7 +16,12 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      obscureText: isPassword,
       decoration: InputDecoration(
+        prefixIcon: Icon(
+          prefixIcon,
+        ),
         hintText: hintText,
         border: const OutlineInputBorder(
           borderSide: BorderSide(
