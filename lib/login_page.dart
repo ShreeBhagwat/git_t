@@ -21,13 +21,13 @@ class LoginPage extends StatelessWidget {
               prefixIcon: Icons.person,
               controller: _emailTextEditingController,
               hintText: 'Enter your email',
-              isPassword: true,
+              isPassword: false,
             ),
             CustomTextField(
               prefixIcon: Icons.person,
               controller: _passwordTextEditingController,
               hintText: 'Enter your password',
-              isPassword: false,
+              isPassword: true,
             ),
             GestureDetector(
               child: Text(
