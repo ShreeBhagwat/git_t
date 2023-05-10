@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:git_t/home_page.dart';
 import 'package:git_t/widgets/custom_text_field.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({super.key});
-  final TextEditingController name = TextEditingController();
-  final TextEditingController email = TextEditingController();
-  final TextEditingController password = TextEditingController();
+  final TextEditingController nameTextEditingController =
+      TextEditingController();
+  final TextEditingController emailTextEditingController =
+      TextEditingController();
+  final TextEditingController passwordTextEditingController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,24 +18,34 @@ class SignUp extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Sign Up Page'),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('Sign Up Page'),
+            ),
             CustomTextField(
               hintText: "Enter your name",
               prefixIcon: (Icons.person),
-              controller: name,
+              controller: nameTextEditingController,
               isPassword: false,
             ),
             CustomTextField(
                 hintText: "Enter your mail",
                 prefixIcon: (Icons.mail),
-                controller: email,
+                controller: emailTextEditingController,
                 isPassword: false),
             CustomTextField(
                 hintText: "Enter password",
                 prefixIcon: (Icons.password),
-                controller: password,
+                controller: passwordTextEditingController,
                 isPassword: true),
-            ElevatedButton(onPressed: () {}, child: Text('Register'))
+            ElevatedButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => HomePage(
+                            name: nameTextEditingController.text,
+                            email: emailTextEditingController.text))),
+                child: const Text('Register'))
           ],
         ),
       ),
