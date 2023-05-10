@@ -13,42 +13,44 @@ class LoginPage extends StatelessWidget {
     final TextEditingController _passwordTextEditingController =
         TextEditingController();
     return Scaffold(
-      body: Column(
-        children: [
-          Text("Login"),
-          CustomTextField(
-            prefixIcon: Icons.person,
-            controller: _emailTextEditingController,
-            hintText: 'Enter your email',
-            isPassword: true,
-          ),
-          CustomTextField(
-            prefixIcon: Icons.person,
-            controller: _passwordTextEditingController,
-            hintText: 'Enter your password',
-            isPassword: false,
-          ),
-          GestureDetector(
-            child: Text(
-              'Do have an account? Create an Account',
+      body: SafeArea(
+        child: Column(
+          children: [
+            Text("Login"),
+            CustomTextField(
+              prefixIcon: Icons.person,
+              controller: _emailTextEditingController,
+              hintText: 'Enter your email',
+              isPassword: true,
             ),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => SignUp()));
-            },
-          ),
-          ElevatedButton(
-              onPressed: () {
+            CustomTextField(
+              prefixIcon: Icons.person,
+              controller: _passwordTextEditingController,
+              hintText: 'Enter your password',
+              isPassword: false,
+            ),
+            GestureDetector(
+              child: Text(
+                'Do have an account? Create an Account',
+              ),
+              onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => HomePage(
-                              name: 'Shree bhagwat',
-                              email: _emailTextEditingController.text,
-                            )));
+                    context, MaterialPageRoute(builder: (_) => SignUp()));
               },
-              child: Text("login"))
-        ],
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => HomePage(
+                                name: 'Shree bhagwat',
+                                email: _emailTextEditingController.text,
+                              )));
+                },
+                child: Text("login"))
+          ],
+        ),
       ),
     );
   }
